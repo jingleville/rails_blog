@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  devise_for :installs
+  devise_for :users
+  root 'home#index'
+
+  
   get 'contacts', to: 'contacts#new'
   post 'contacts', to: 'contacts#create'
-  root 'home#index'
+  
 
   get 'terms' => 'pages#terms'
   get 'about' => 'pages#about'

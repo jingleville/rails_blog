@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: installs
+# Table name: users
 #
 #  id                     :integer          not null, primary key
 #  email                  :string           default(""), not null
@@ -13,13 +13,12 @@
 #
 # Indexes
 #
-#  index_installs_on_email                 (email) UNIQUE
-#  index_installs_on_reset_password_token  (reset_password_token) UNIQUE
+#  index_users_on_email                 (email) UNIQUE
+#  index_users_on_reset_password_token  (reset_password_token) UNIQUE
 #
-require "test_helper"
-
-class InstallTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 end
