@@ -107,8 +107,18 @@
 /* Create a right-aligned (split) link inside the navigation bar */
 .topnav a.split {
   float: right;
-  background-color: #04AA6D;
-  color: white;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Create a right-aligned (split) link inside the navigation bar */
+.topnav a.split:hover {
+  float: right;
+  background-color: #ddd;
+  color: black;
 }
 
 .wrapper {
