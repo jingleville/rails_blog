@@ -12,29 +12,22 @@
 <% end %>
 
 
+<% if user_signed_in? %>
 
-<div class="wrapper">
-	<%= form_for ([@article, @article.comments.build]) do |f| %>
-		<div class="box1">
-			<%= f.label :author %>	
-		</div>
+	<div class="wrapper">
+		<%= form_for ([@article, @article.comments.build]) do |f| %>
+			<div class="box3">
+				<%= f.label :body %>
+			</div>
 
-		<div class="box2">
-			<%= f.text_field :author %>
-		</div>
+			<div class="box4">
+				<%= f.text_area :body %>			
+			</div>
 
-		<div class="box3">
-			<%= f.label :body %>
-		</div>
-
-		<div class="box4">
-			<%= f.text_area :body %>			
-		</div>
-
-		<div class="box5">
-			<%= f.submit :Submit %>
-		</div>
-	<% end %>
-</div>
-
+			<div class="box5">
+				<%= f.submit :Submit %>
+			</div>
+		<% end %>
+	</div>
+<%end%>
 
