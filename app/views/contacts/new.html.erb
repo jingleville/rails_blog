@@ -1,0 +1,29 @@
+<h1> Get contacts </h1>
+
+<%= form_for :contact, url: '/contacts', data: {turbo:false} do |f| %>
+	
+	<% if @contact %>
+		<div class="errors_message">
+			<ul>
+				<% @contact.errors.full_messages.each do |message| %>
+					<li>
+						<%= message %>
+					</li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<p>
+		<%= f.label :email%>
+		<%= f.text_field :email%>
+	</p>
+
+	<p>
+		<%= f.label :message%>
+		<%= f.text_area :message%>
+	</p>
+
+	<p>
+		<%= f.submit :Submit, class: 'button'%>
+	</p>
+<% end %>

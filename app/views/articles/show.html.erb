@@ -1,0 +1,40 @@
+<h1> <%= @article.title %> </h1>
+
+<p> <%= @article.text %> </p>
+
+<% @article.comments.each do |comment| %>
+	<div class="card">
+	  <div class="container">
+	    <h4><b><%=comment.author %></b></h4>
+	    <p><%= comment.body %></p>
+	  </div>
+	</div> 
+<% end %>
+
+
+
+<div class="wrapper">
+	<%= form_for ([@article, @article.comments.build]) do |f| %>
+		<div class="box1">
+			<%= f.label :author %>	
+		</div>
+
+		<div class="box2">
+			<%= f.text_field :author %>
+		</div>
+
+		<div class="box3">
+			<%= f.label :body %>
+		</div>
+
+		<div class="box4">
+			<%= f.text_area :body %>			
+		</div>
+
+		<div class="box5">
+			<%= f.submit :Submit %>
+		</div>
+	<% end %>
+</div>
+
+

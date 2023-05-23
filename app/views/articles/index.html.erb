@@ -1,0 +1,14 @@
+<h1>Articles</h1>
+
+<% @articles.each do |article| %>
+	<div class="card">
+	  <div class="container">
+	    <h4><b><%= article.title %></b></h4>
+	    <p><%= article.text %></p>
+				<%= button_to "Show", article_path(article), method: :get, class: 'btn show' %> 
+				<%= button_to "Edit", edit_article_path(article), method: :get, class: 'btn edit' %> 
+				<%= button_to "Destroy", article_path(article), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn destroy'  %>
+	  </div>
+	</div> 
+
+<% end %> 
